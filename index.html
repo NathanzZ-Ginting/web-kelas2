@@ -16,7 +16,7 @@
       </a>
       <button id="mobile-menu-btn" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
-        <!-- Icon menu bisa ditambahkan di sini -->
+        ☰
       </button>
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
         <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0">
@@ -29,205 +29,104 @@
     </div>
   </nav>
 
-  <!-- Content -->
+  <!-- Konten Dinamis -->
   <main id="content" class="flex-grow max-w-7xl mx-auto p-6">
-    <!-- Konten dinamis akan dimuat di sini -->
+    <h1 class="text-3xl font-bold mb-4">Selamat datang di Web Kelas!</h1>
+    <p>Ini halaman beranda. Pilih menu untuk melihat halaman lain.</p>
   </main>
 
   <script>
     const content = document.getElementById('content');
     const navLinks = document.querySelectorAll('.nav-link');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('navbar-default');
 
-    // Template halaman
+    // Konten per halaman
     const pages = {
       beranda: `
         <h1 class="text-3xl font-bold mb-4">Selamat datang di Web Kelas!</h1>
         <p>Ini halaman beranda. Pilih menu untuk melihat halaman lain.</p>
       `,
-      'daftar-siswa': `
+      "daftar-siswa": `
         <section class="py-16 bg-white dark:bg-gray-900">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Daftar Siswa</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Daftar Siswa</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-          <img class="rounded-t-lg w-full h-48 object-cover" style="object-position: 50% 5%;" src="joo.png" alt="Joenathan" />
-        </a>
-        <div class="p-5">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Joenathan Haganta Ginting</h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Mobile Developer</p>
-          <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Profil Lengkap
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-          </a>
-        </div>
-      </div>
+              <!-- Siswa 1 -->
+              <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                <img class="rounded-t-lg w-full h-48 object-cover" style="object-position: 50% 5%;" src="joo.png" alt="Joenathan" />
+                <div class="p-5">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Joenathan Haganta Ginting</h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Mobile Developer</p>
+                </div>
+              </div>
 
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-          <img class="rounded-t-lg w-full h-48 object-cover" style="object-position: 50% 40%;" src="nunung.png" alt="Nunung" />
-        </a>
-        <div class="p-5">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Nunung</h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">OSIS</p>
-          <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Profil Lengkap
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-          </a>
-        </div>
-      </div>
+              <!-- Siswa 2 -->
+              <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                <img class="rounded-t-lg w-full h-48 object-cover" style="object-position: 50% 40%;" src="nunung.png" alt="Nunung" />
+                <div class="p-5">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Nunung</h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">UI/UX Designer</p>
+                </div>
+              </div>
 
-      <!-- Tambahkan card siswa lainnya di sini -->
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-          <img class="rounded-t-lg w-full h-48 object-cover" style="object-position: 50% 80%;" src="mardy.png" alt="Mardy" />
-        </a>
-        <div class="p-5">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Mardy Abner Siagian</h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Siswa</p>
-          <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Profil Lengkap
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-          </a>
-        </div>
-      </div>
+              <!-- Siswa 3 -->
+              <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                <img class="rounded-t-lg w-full h-48 object-cover" style="object-position: 50% 40%;" src="kirana.png" alt="Nunung" />
+                <div class="p-5">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">kiranaa</h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Data Analyst</p>
+                </div>
+              </div>
 
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-          <img class="rounded-t-lg w-full h-48 object-cover" style="object-position: 50% 80%;" src="dika.jpg" alt="Hitam" />
-        </a>
-        <div class="p-5">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Dika Hitam</h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Beban Kelas</p>
-          <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Profil Lengkap
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-          <img class="rounded-t-lg w-full h-48 object-cover" style="object-position: 5% 20%;" src="sarip.png" alt="marsya" />
-        </a>
-        <div class="p-5">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">sarip kecee</h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Beban Kelas</p>
-          <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Profil Lengkap
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-          <img class="rounded-t-lg w-full h-48 object-cover" style="object-position: 50% 50%;" src="kirana.png" alt="kirana" />
-        </a>
-        <div class="p-5">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">kirana</h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Beban Kelas</p>
-          <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Profil Lengkap
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+              <!-- Tambahkan siswa lain jika perlu -->
+            </div>
+          </div>
+        </section>
       `,
       prestasi: `
-        <section class="py-16 bg-gray-50 dark:bg-gray-800">
-          <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Prestasi</h2>
-            <ul class="space-y-4 text-gray-700 dark:text-gray-300">
-              <li>🏆 Juara 1 Lomba Coding Nasional 2024</li>
-              <li>🎓 Beasiswa Siswa Berprestasi dari Kemdikbud</li>
-              <li>📱 Aplikasi "LearnIt" tembus 100K+ download di Play Store</li>
+        <section class="py-16 bg-white dark:bg-gray-900">
+          <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Prestasi Kelas</h2>
+            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
+              <li>Juara 1 Lomba Coding Nasional</li>
+              <li>Finalis Olimpiade Matematika</li>
+              <li>Desain Poster Terbaik Tingkat Provinsi</li>
+              <li>Perwakilan sekolah dalam pertukaran pelajar ke Jepang</li>
             </ul>
           </div>
         </section>
       `,
       kontak: `
         <section class="py-16 bg-white dark:bg-gray-900">
-          <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Kontak</h2>
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input type="text" placeholder="Nama Lengkap" class="p-4 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white" />
-              <input type="email" placeholder="Email" class="p-4 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white" />
-              <textarea placeholder="Pesan" rows="5" class="md:col-span-2 p-4 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white"></textarea>
-              <button type="submit" class="md:col-span-2 bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-700 transition">Kirim</button>
-            </form>
+          <div class="max-w-2xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Kontak Kami</h2>
+            <p class="mb-2 text-gray-700 dark:text-gray-300">Email: kelas12ipa1@example.com</p>
+            <p class="text-gray-700 dark:text-gray-300">Instagram: @kelas12ipa1</p>
           </div>
         </section>
       `
     };
 
-    function setActiveLink(page) {
-      navLinks.forEach(link => {
-        if (link.dataset.page === page) {
-          link.classList.add('bg-blue-200', 'dark:bg-blue-600');
-        } else {
-          link.classList.remove('bg-blue-200', 'dark:bg-blue-600');
-        }
-      });
-    }
-
-    function renderPage(page) {
-      content.innerHTML = pages[page];
-      setActiveLink(page);
-
-      // Tutup mobile menu bila terbuka
-      if (!mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.add('hidden');
-      }
-    }
-
+    // Ganti konten saat klik menu
     navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const page = link.dataset.page;
-        renderPage(page);
+        if (pages[page]) {
+          content.innerHTML = pages[page];
+          if (window.innerWidth < 768) {
+            mobileMenu.classList.add("hidden");
+          }
+        }
       });
     });
 
-    // Set default halaman
-    renderPage('beranda');
-
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    // Toggle menu mobile
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle("hidden");
     });
   </script>
-
 </body>
 </html>
